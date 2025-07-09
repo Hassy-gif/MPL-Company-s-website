@@ -1,0 +1,193 @@
+/*
+==================================================
+  MBELAYIM PVT LTD - FINAL WEBSITE STYLESHEET
+==================================================
+*/
+
+/* --- Global Styles & Letterhead Variables --- */
+:root {
+    --mbelayim-blue: #00529B;
+    --mbelayim-red: #D42128;
+    --mbelayim-charcoal: #7a8286;
+    --mbelayim-light-gray: #f0f2f5;
+    --mbelayim-tan: #EAE3D4;
+    --mbelayim-white: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: var(--mbelayim-charcoal);
+    background-color: var(--mbelayim-white);
+}
+
+.container {
+    max-width: 1280px; 
+    margin: auto;
+    padding: 0 2rem;
+}
+
+/* --- NO WATERMARK IN MAIN CONTENT --- */
+main { position: relative; z-index: 1; }
+
+h1, h2, h3 { font-weight: 700; color: var(--mbelayim-blue); line-height: 1.3; margin-bottom: 1rem; }
+h2 { font-size: 2.5rem; }
+
+p { margin-bottom: 1.2rem; }
+a { text-decoration: none; color: var(--mbelayim-blue); transition: color 0.3s ease; }
+a:hover { color: var(--mbelayim-red); }
+
+.btn { display: inline-block; background: var(--mbelayim-red); color: var(--mbelayim-white); padding: 0.8rem 1.8rem; border: none; cursor: pointer; font-size: 1rem; font-weight: 600; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.btn:hover { background: #a91a20; transform: translateY(-2px); }
+
+/* --- FINAL HEADER: LOGO AS BACKGROUND --- */
+.main-header { 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    background-color: var(--mbelayim-white);
+    
+    background-image: url('../images/logo.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: left center;
+
+    border-bottom: 4px solid var(--mbelayim-blue);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.main-header::after {
+    content: ''; position: absolute; bottom: -8px; left: 0;
+    width: 100%; height: 4px; background: var(--mbelayim-red);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 110px;
+}
+
+.logo-link {
+    display: none; /* Hide the <img> tag */
+}
+
+.main-nav .nav-links { display: flex; list-style: none; align-items: center; }
+.main-nav .nav-links li { margin-left: 2.5rem; }
+.main-nav .nav-links a { 
+    color: var(--mbelayim-charcoal); 
+    font-weight: 600; 
+    font-size: 1.1rem; 
+    padding: 1rem 0;
+    text-shadow: 1px 1px 2px var(--mbelayim-white);
+}
+.main-nav .nav-links a.active, .main-nav .nav-links a:hover { color: var(--mbelayim-blue); }
+
+/* Dropdown Menu */
+.dropdown { position: relative; }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--mbelayim-white); box-shadow: 0 5px 15px rgba(0,0,0,0.1); list-style: none; padding: 0.5rem 0; border-radius: 8px; width: 230px; }
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu li { margin: 0; }
+.dropdown-menu a { display: block; padding: 0.7rem 1.2rem; }
+.dropdown-menu a:hover { background: var(--mbelayim-light-gray); }
+
+/* --- Hero Section --- */
+.hero { height: 60vh; color: var(--mbelayim-white); display: flex; justify-content: center; align-items: center; text-align: center; position: relative; background-size: cover; background-position: center center; }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)); }
+.hero-content { z-index: 1; max-width: 900px; padding: 0 1rem; }
+.hero h1 { font-size: 3.5rem; color: var(--mbelayim-white); text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+.hero p { font-size: 1.3rem; }
+
+.home-hero { background-image: url('../images/home-hero.jpg'); background-color:lightgrey;}
+.about-hero { background-image: url('../images/about-hero.jpg'); background-color: #AFDDFF;}
+.agri-hero { background-image: url('../images/agri-hero.jpg'); background-color: #28a745; }
+.construction-hero { background-image: url('../images/construction-hero.jpg'); background-color: var(--mbelayim-blue); }
+.invest-hero { background-image: url('../images/invest-hero.jpg'); background-color: lightgrey;}
+.contact-hero { background-image: url('../images/contact-hero.jpg'); background-color: #AFDDFF;}
+
+/* --- Page Sections --- */
+.welcome-section { text-align: center; background-color: var(--mbelayim-light-gray); padding: 5rem 0; }
+.content-section { background-color: var(--mbelayim-white); padding: 5rem 0; }
+.welcome-section h2 { font-size: 2.8rem; }
+    
+.divisions-section .container-fluid { display: flex; min-height: 50vh; }
+.division-card { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 3rem; color: var(--mbelayim-white); position: relative; background-size: cover; background-position: center; transition: all 0.5s ease; }
+.division-card:hover { transform: scale(1.02); }
+.division-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); }
+.division-content { z-index: 1; }
+.division-content h3 { font-size: 2.5rem; color: var(--mbelayim-white); }
+.agri-card { background-image: url('../images/goat-section.jpg'); background-color: #28a745; }
+.const-card { background-image: url('../images/road-section.jpg'); background-color: var(--mbelayim-blue); }
+
+/* --- Footer --- */
+.main-footer { background: var(--mbelayim-tan); color: var(--mbelayim-charcoal); padding: 2.5rem 0; text-align: center; font-weight: 600; }
+.main-footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.main-footer a { color: var(--mbelayim-blue); font-weight: bold; }
+
+/* --- Hamburger Menu & Mobile Nav --- */
+.hamburger { display: none; cursor: pointer; background: none; border: none; z-index: 1001; }
+.hamburger span { display: block; width: 28px; height: 3px; margin: 6px 0; background: var(--mbelayim-charcoal); }
+.mobile-nav { display: none; position: fixed; top: 0; left: -100%; width: 100%; height: 100%; background: var(--mbelayim-white); z-index: 999; flex-direction: column; align-items: center; justify-content: center; text-align: center; transition: left 0.4s ease-in-out; }
+.mobile-nav.active { left: 0; }
+.mobile-nav ul { list-style: none; }
+.mobile-nav ul li { margin: 2rem 0; }
+.mobile-nav ul a { color: var(--mbelayim-charcoal); font-size: 1.8rem; font-weight: 700; }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
+/* --- Responsive Styles --- */
+@media(max-width: 992px) {
+    .main-header { background-position: 2rem center; }
+    .main-nav .nav-links li { margin-left: 1.5rem; }
+}
+@media(max-width: 768px) {
+    .main-nav { display: none; }
+    .hamburger { display: block; }
+    .main-header .container { justify-content: flex-end; }
+    .main-header { background-position: 1rem center; background-size: auto 80%; }
+    .main-header .container { height: 90px; }
+}
+
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* This creates the two-column layout */
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.contact-info p {
+    font-size: 1rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    border-color: black;
+    background-color:lightgrey;/*s a light gray background */
+    font-family: 'Poppins', sans-serif; /* Ensures the font matches */
+    font-size: 1rem; /* Ensures the font size is correct */
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--mbelayim-blue);
+}
